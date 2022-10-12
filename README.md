@@ -12,8 +12,8 @@ a `task.sh` file inside a `<task_name>/` directory. In this way, tasks can do wh
 I don't know why anyone else would use this but just in case this is how I use it:
 1) Fork it. 
 2) Add your tasks. Package install, dotfile setup, github project clone, etc.
-3) Create a release as a compressed tarball.
-4) When you find yourself in an empty & depressing shell of a linux system, run `wget https://<wherever your hosting>/*.tar.xz`
+3) Tag and create a release.
+4) When you find yourself in an empty & depressing shell of a linux system, run `wget https://<wherever your hosting>/<release_name>.tar.gz`
 5) Untar, & run `rice-cake.sh`
 6) Congrats. 
 
