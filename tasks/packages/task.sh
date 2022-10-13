@@ -11,7 +11,7 @@ get_packages() {
     eval $out="'$pkgs'"
 }
 
-apt() {
+do_apt() {
     sudo apt update && sudo apt upgrade 
     cmd="sudo apt-get install -y"
     get_packages pkgs
@@ -19,9 +19,9 @@ apt() {
     exec $cmd
 }
 
-pacman() {
+do_pacman() {
     sudo pacman -Syyuu
-    cmd="sudo pacman -Sy"
+    cmd="sudo pacman --noconfirm -Sy"
     cmd+=$1
     exec $cmd
 }
@@ -30,10 +30,10 @@ get_packages pkgs
 
 if command -v apt > /dev/null
 then
-    apt $pkgs
-elif command -v pacman
+    do_apt $pkgs
+elif command -v pacman > /dev/null
 then
-    pacman $pkgs
+    do_pacman $pkgs
 fi
 
  
