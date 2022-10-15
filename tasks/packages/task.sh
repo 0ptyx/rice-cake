@@ -25,6 +25,7 @@ do_apt() {
 post_arch {
     git clone https//aur.archlinux.org/yay.git
     cd yay && makepkg -si --noconfirm --needed
+    yay -S && yay -Sy --noconfirm --needed stow
 }
 
 # install packages provided by $1 with pacman
