@@ -36,7 +36,7 @@ do_pacman() {
     eval $cmd
 }
 
-get_packages pkgs
+get_packages pkgs "$(pwd)/tasks/packages/packages"
 
 if command -v apt > /dev/null
 then
